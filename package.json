@@ -1,6 +1,6 @@
 {
   "name": "window-wrapper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "author": "Minotech Ltd",
   "license": "MIT",
   "private": false,
@@ -18,9 +18,9 @@
     "eslint": "^4.19.0",
     "eslint-config-defaults": "^9.0.0",
     "gulp": "^3.9.1",
+    "gulp-rename": "^1.2.2",
     "gulp-clean": "^0.4.0"
   },
   "dependencies": {
-    "gulp-rename": "^1.2.2"
   }
 }
