@@ -3,11 +3,10 @@
 REM -- Uncomment to Init NPM first run --
 REM CALL ..\..\set-npm.bat
 
-REM ECHO Compiling JS...
-REM CD ..\
-REM CALL gulp
-REM CD ..\deploy
+ECHO Compiling JS...
+CD ..\
+CALL gulp
 
 ECHO Publishing to NPM...
-CALL npm publish ..\
+CALL npm publish deploy\build\
 pause

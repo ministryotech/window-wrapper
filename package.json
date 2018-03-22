@@ -1,14 +1,14 @@
 {
   "name": "window-wrapper",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "author": "Minotech Ltd",
   "license": "MIT",
   "private": false,
   "keywords": [
-      "stub",
-      "window",
-      "global",
-      "wrapper"
+    "stub",
+    "window",
+    "global",
+    "wrapper"
   ],
   "repository": {
     "type": "git",
@@ -16,7 +16,11 @@
   },
   "devDependencies": {
     "eslint": "^4.19.0",
-    "eslint-config-defaults": "^9.0.0"
+    "eslint-config-defaults": "^9.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-rename": "^1.2.2"
+  }
 }
