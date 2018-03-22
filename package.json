@@ -1,0 +1,16 @@
+{
+  "name": "window-wrapper",
+  "version": "1.0.0",
+  "author": "Minotech Ltd",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ministryotech/window-wrapper.git"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.0",
+    "eslint-config-defaults": "^9.0.0"
+  },
+  "dependencies": {}
+}
