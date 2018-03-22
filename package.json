@@ -1,9 +1,15 @@
 {
   "name": "window-wrapper",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Minotech Ltd",
   "license": "MIT",
   "private": false,
+  "keywords": [
+      "stub",
+      "window",
+      "global",
+      "wrapper"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/ministryotech/window-wrapper.git"
