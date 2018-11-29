@@ -16,9 +16,9 @@
     }
 
     // Exports to the global scope
-    if (typeof define === "function" && define.amd) {
-        define("window-wrapper", [], function() { return funcs })
-    } else if (typeof exports === "object") {
+    if (typeof define === 'function' && define.amd) {
+        define('window-wrapper', [], function() { return funcs })
+    } else if (typeof exports === 'object') {
         module.exports = funcs
     } else {
         root.Wrapper = funcs // Somewhat pointless usage but there we go...
