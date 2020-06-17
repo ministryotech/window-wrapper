@@ -10,9 +10,15 @@
     const root = window
 
     const funcs = {
-        getHref: () => window.location.href,
-        getHost: () => window.location.hostname,
-        getPath: () => window.location.pathname
+        getHref: function() {
+            return window.location.href
+        },
+        getHost: function() {
+            return window.location.hostname
+        },
+        getPath: function() {
+            return window.location.pathname
+        },
     }
 
     // Exports to the global scope
