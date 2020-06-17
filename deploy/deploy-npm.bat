@@ -6,7 +6,7 @@ REM CALL ..\..\set-npm.bat
 CD ..\
 
 ECHO Linting...
-CALL .\node_modules\.bin\eslint .\path-manager.js
+CALL .\node_modules\.bin\eslint .\window-wrapper.js
 
 ECHO Compiling JS...
 CALL gulp
