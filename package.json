@@ -15,7 +15,7 @@
     "url": "https://github.com/ministryotech/window-wrapper.git"
   },
   "devDependencies": {
-    "eslint": "^4.19.0",
+    "eslint": "^8.56.0",
     "eslint-config-defaults": "^9.0.0",
     "gulp": "^4.0.2",
     "gulp-clean": "^0.4.0",
