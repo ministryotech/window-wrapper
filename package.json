@@ -16,8 +16,7 @@
   },
   "devDependencies": {
     "eslint": "^8.56.0",
-    "eslint-config-defaults": "^9.0.0",
-    "require": "^2.4.20"
+    "eslint-config-defaults": "^9.0.0"
   },
   "scripts": {
     "warn-win": "echo The Windows scripts have not been fully tested and may need an update...",

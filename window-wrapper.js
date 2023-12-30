@@ -75,8 +75,10 @@
     }
 
     // Exports to the global scope
+    // noinspection JSUnresolvedReference - define check for require.js module support.
     if (typeof define === 'function' && define.amd) {
         // noinspection JSCheckFunctionSignatures
+        // noinspection JSUnresolvedReference - define check for require.js module support.
         define('window-wrapper', [], function() { return locationUtils })
     } else if (typeof exports === 'object') {
         module.exports = locationUtils
