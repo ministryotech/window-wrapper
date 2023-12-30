@@ -1,15 +1,16 @@
+// noinspection JSUnusedGlobalSymbols
+
 /*
     Window Wrapper
     --------------
     Wraps window path methods for easy mocking. Should not be used directly - this is a direct dependency of path-manager.
-
     https://github.com/ministryotech/window-wrapper
 */
 (function() {
 
     const root = window
 
-    const funcs = {
+    const locationUtils = {
 
         /**
          * Gets the current URI.
@@ -40,21 +41,20 @@
          * be invoked when the event is dispatched.
          * 
          * The options argument sets listener-specific options. For compatibility this can be a boolean, in which case the method 
-         * behaves exactly as if the value was specified as options's capture.
+         * behaves exactly as if the value was specified as options capture.
          * 
-         * When set to true, options's capture prevents callback from being invoked when the event's eventPhase attribute value is 
+         * When set to true, options capture prevents callback from being invoked when the event's eventPhase attribute value is
          * BUBBLING_PHASE. When false (or not present), callback will not be invoked when event's eventPhase attribute value is 
          * CAPTURING_PHASE. Either way, callback will be invoked if event's eventPhase attribute value is AT_TARGET.
          * 
-         * When set to true, options's passive indicates that the callback will not cancel the event by invoking preventDefault(). 
+         * When set to true, options passive indicates that the callback will not cancel the event by invoking preventDefault().
          * This is used to enable performance optimizations described in § 2.8 Observing event listeners.
          * 
-         * When set to true, options's once indicates that the callback will only be invoked once after which the event listener 
+         * When set to true, options once indicates that the callback will only be invoked once after which the event listener
          * will be removed.
          * 
          * The event listener is appended to target's event listener list and is not appended if it has the same type, callback, 
          * and capture.
-         * 
          * @param {string} type The event type.
          * @param {EventListenerOrEventListenerObject} listener The event listener.
          * @param {boolean | AddEventListenerOptions} options
@@ -65,7 +65,6 @@
 
         /**
          * Removes the event listener in target's event listener list with the same type, callback, and options.
-         * 
          * @param {string} type The event type.
          * @param {EventListenerOrEventListenerObject} listener The event listener.
          * @param {boolean | EventListenerOptions} options
@@ -77,11 +76,12 @@
 
     // Exports to the global scope
     if (typeof define === 'function' && define.amd) {
-        define('window-wrapper', [], function() { return funcs })
+        // noinspection JSCheckFunctionSignatures
+        define('window-wrapper', [], function() { return locationUtils })
     } else if (typeof exports === 'object') {
-        module.exports = funcs
+        module.exports = locationUtils
     } else {
-        root.Wrapper = funcs // Somewhat pointless usage but there we go...
+        root.Wrapper = locationUtils // Somewhat pointless usage but there we go...
     }
     
 })()

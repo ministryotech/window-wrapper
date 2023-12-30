@@ -1,7 +1,7 @@
 {
   "name": "window-wrapper",
-  "version": "1.2.0",
-  "author": "Minotech Ltd",
+  "version": "2.0.0",
+  "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
   "keywords": [
@@ -15,10 +15,26 @@
     "url": "https://github.com/ministryotech/window-wrapper.git"
   },
   "devDependencies": {
-    "eslint": "^4.19.0",
+    "eslint": "^8.56.0",
     "eslint-config-defaults": "^9.0.0",
-    "gulp": "^3.9.1",
-    "gulp-clean": "^0.4.0",
-    "gulp-rename": "^1.4.0"
+    "require": "^2.4.20"
+  },
+  "scripts": {
+    "warn-win": "echo The Windows scripts have not been fully tested and may need an update...",
+    "ensure-dir": "mkdir ./deploy/build",
+    "copy-module": "cp window-wrapper.js ./deploy/build/index.js",
+    "copy-readme": "cp README.md ./deploy/build/",
+    "copy-package-json": "cp package.json ./deploy/build/",
+    "copy-module-win": "xcopy window-wrapper.js ./deploy/build/index.js",
+    "copy-readme-win": "xcopy README.md ./deploy/build/",
+    "copy-package-json-win": "xcopy package.json ./deploy/build/",
+    "build": "npm run clean && npm run ensure-dir && npm run copy-module && npm run copy-readme && npm run copy-package-json",
+    "build-win": "npm run warn-win && npm run clean-win && npm run ensure-dir && npm run copy-module-win && npm run copy-readme-win && npm run copy-package-json-win",
+    "clean": "rm -rf ./deploy/build",
+    "clean-win": "rmdir ./deploy/build /f",
+    "lint": "eslint --fix",
+    "publish": "npm publish deploy/build/",
+    "release": "npm run lint && npm run build && npm run publish",
+    "release-win": "npm run lint && npm run build-win && npm run publish"
   }
 }
