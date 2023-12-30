@@ -74,7 +74,9 @@
         }
     }
 
-    // Exports to the global scope
+    /*--------------------------------------------------------------------------*/
+
+    // Export library
     // noinspection JSUnresolvedReference - define check for require.js module support.
     if (typeof define === 'function' && define.amd) {
         // noinspection JSCheckFunctionSignatures
