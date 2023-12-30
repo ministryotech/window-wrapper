@@ -1,6 +1,6 @@
 {
   "name": "window-wrapper",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
@@ -33,8 +33,8 @@
     "clean": "rm -rf ./deploy/build",
     "clean-win": "rmdir ./deploy/build /f",
     "lint": "eslint --fix",
-    "publish": "npm publish deploy/build/",
-    "release": "npm run lint && npm run build && npm run publish",
-    "release-win": "npm run lint && npm run build-win && npm run publish"
+    "publish-to-npm": "npm publish deploy/build/",
+    "release": "npm run lint && npm run build && npm run publish-to-npm",
+    "release-win": "npm run lint && npm run build-win && npm run publish-to-npm"
   }
 }
