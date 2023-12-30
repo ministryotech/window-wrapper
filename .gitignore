@@ -273,6 +273,7 @@ __pycache__/
 
 ### Build ###
 build/
+*.tar.gz
 
 # Built assets #
 /src/*/Test/compiled/

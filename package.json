@@ -34,7 +34,8 @@
     "clean-win": "rmdir ./deploy/build /f",
     "lint": "eslint --fix",
     "publish-to-npm": "npm publish deploy/build/",
-    "release": "npm run lint && npm run build && npm run publish-to-npm",
+    "build-tar-for-github": "tar -czvf window-wrapper.tar.gz deploy/build/",
+    "release": "npm run lint && npm run build && npm run publish-to-npm && build-tar-for-github",
     "release-win": "npm run lint && npm run build-win && npm run publish-to-npm"
   }
 }
