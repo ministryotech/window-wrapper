@@ -7,29 +7,32 @@
     https://github.com/ministryotech/window-wrapper
 */
 
+/**
+ * Wraps window path methods for easy mocking. Should not be used directly - this is a direct dependency of path-manager.
+ */
 const WindowWrapper = {
 
     /**
      * Gets the current URI.
-     * @returns {string} The current URI.
+     * @returns The current URI.
      */
-    getHref: function() {
+    getHref: function(): string {
         return window.location.href
     },
 
     /**
      * Gets the current host.
-     * @returns {string} The current host.
+     * @returns The current host.
      */
-    getHost: function() {
+    getHost: function(): string {
         return window.location.hostname
     },
 
     /**
      * Gets the current path.
-     * @returns {string} The current path.
+     * @returns The current path.
      */
-    getPath: function() {
+    getPath: function(): string {
         return window.location.pathname
     },
 
@@ -52,21 +55,21 @@ const WindowWrapper = {
      *
      * The event listener is appended to target's event listener list and is not appended if it has the same type, callback,
      * and capture.
-     * @param {string} type The event type.
-     * @param {EventListenerOrEventListenerObject} listener The event listener.
-     * @param {boolean | AddEventListenerOptions} options
+     * @param type The event type.
+     * @param listener The event listener.
+     * @param options
      */
-    addEventListener: function(type, listener, options) {
+    addEventListener: function(type: string, listener: EventListenerOrEventListenerObject, options: boolean | AddEventListenerOptions) {
         return window.addEventListener(type, listener, options)
     },
 
     /**
      * Removes the event listener in target's event listener list with the same type, callback, and options.
-     * @param {string} type The event type.
-     * @param {EventListenerOrEventListenerObject} listener The event listener.
-     * @param {boolean | EventListenerOptions} options
+     * @param type The event type.
+     * @param listener The event listener.
+     * @param options
      */
-    removeEventListener: function(type, listener, options) {
+    removeEventListener: function(type: string, listener: EventListenerOrEventListenerObject, options: boolean | EventListenerOptions) {
         return window.removeEventListener(type, listener, options)
     },
 }
