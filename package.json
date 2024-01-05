@@ -28,11 +28,11 @@
     "lint": "eslint src/*.js --fix",
     "ensure-dir": "mkdir ./dist",
     "clean": "rm -rf ./dist",
-    "tsc:build": "npx tsc",
-    "tsc:package": "npm run clean && npm run ensure-dir && npm run tsc:build && cp README.md ./dist/ && cp package.json ./dist/",
     "esbuild:min": "esbuild ./dist/window-wrapper.js --minify --outfile=./dist/window-wrapper.min.js",
+    "tsc:build": "npx tsc",
+    "tsc:package": "npm run clean && npm run ensure-dir && npm run tsc:build && npm run esbuild:min && cp README.md ./dist/ && cp package.json ./dist/",
     "publish:npm": "npm publish dist/",
     "publish:tar": "tar -czvf window-wrapper.tar.gz dist/",
-    "release": "npm run lint && npm run tsc:package && npm run esbuild:min && npm run publish:npm && npm run publish:tar"
+    "release": "npm run lint && npm run tsc:package && npm run publish:npm && npm run publish:tar"
   }
 }
