@@ -187,9 +187,9 @@ module.exports = {
         'wrap-regex': 0, // require regex literals to be wrapped in parentheses (off by default)
 
         ////////// ECMAScript 6 //////////
-        //'no-duplicate-imports': 2,
-        //'no-var': 2, // require let or const instead of var (off by default)
-        //'generator-star': 0, // enforce the position of the * in generator functions (off by default)
+        'no-duplicate-imports': 2,
+        'no-var': 2, // require let or const instead of var (off by default)
+        'generator-star': 0, // enforce the position of the * in generator functions (off by default)
 
         ////////// Legacy //////////
         'max-depth': 0, // specify the maximum depth that blocks can be nested (off by default)
