@@ -2,9 +2,18 @@
 
 // eslint-disable-next-line strict
 module.exports = {
+    extends: [
+        'eslint:recommended',
+        'plugin:@typescript-eslint/recommended',
+    ],
+    parser: '@typescript-eslint/parser',
+    plugins: [
+        '@typescript-eslint',
+    ],
     root: true,
     parserOptions: {
-        ecmaVersion: 5,
+        ecmaVersion: 'latest',
+        sourceType: 'module',
     },
     env: {
         browser: true,
@@ -13,13 +22,10 @@ module.exports = {
         prototypejs: true,
     },
     globals: {
-        'define': true,
+        'define': false,
         'require': true,
         'module': true,
     },
-    extends: [
-        'eslint:recommended',
-    ],
     rules: {
         ////////// Possible Errors //////////
         'no-await-in-loop': 1, // disallow `await` inside of loops
