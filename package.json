@@ -1,0 +1,26 @@
+{
+  "name": "window-wrapper",
+  "private": false,
+  "version": "5.0.0",
+  "author": "Keith Jackson",
+  "license": "MIT",
+  "type": "module",
+  "keywords": [
+    "stub",
+    "window",
+    "global",
+    "wrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ministryotech/window-wrapper.git"
+  },
+  "scripts": {
+    "type-checking-watch": "tsc --watch",
+    "build": "tsc && vite build"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vite": "^7.1.7"
+  }
+}
