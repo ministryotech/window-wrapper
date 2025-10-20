@@ -82,6 +82,28 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem 1rem;
+    max-width: 400px;
+    margin: 1rem auto;
+}
+
+dt {
+    font-weight: bold;
+    text-align: right;
+}
+
+dt::after {
+    content: ':';
+}
+
+dd {
+    margin: 0;
+    text-align: left;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

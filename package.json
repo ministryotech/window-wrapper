@@ -5,6 +5,11 @@
   "author": "Keith Jackson",
   "license": "MIT",
   "type": "module",
+  "main": "main.js",
+  "exports": {
+    ".": "./dist/main.js",
+    "./package.json": "./package.json"
+  },
   "keywords": [
     "stub",
     "window",
@@ -17,11 +22,10 @@
   },
   "scripts": {
     "init": "npm i && npm link",
-    "type-checking-watch": "tsc --watch",
-    "build": "init && tsc && vite build"
+    "type-checking-watch": "tsc --watch --noemit",
+    "build": "npm run init && tsc"
   },
   "devDependencies": {
-    "typescript": "~5.9.3",
-    "vite": "^7.1.7"
+    "typescript": "~5.9.3"
   }
 }
