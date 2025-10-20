@@ -16,8 +16,9 @@
     "url": "https://github.com/ministryotech/window-wrapper.git"
   },
   "scripts": {
+    "init": "npm i && npm link",
     "type-checking-watch": "tsc --watch",
-    "build": "tsc && vite build"
+    "build": "init && tsc && vite build"
   },
   "devDependencies": {
     "typescript": "~5.9.3",
