@@ -22,10 +22,20 @@
   },
   "scripts": {
     "init": "npm i && npm link",
+    "lint": "eslint src/*.ts --fix",
+    "clean": "rm -rf ./dist",
     "type-checking-watch": "tsc --watch --noemit",
-    "build": "npm run init && tsc"
+    "build": "npm run init && npm run clean && npm run lint && tsc"
   },
   "devDependencies": {
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^20.19.5",
+    "@typescript-eslint/eslint-plugin": "^8.46.2",
+    "@typescript-eslint/parser": "^8.46.2",
+    "eslint": "^9.38.0",
+    "eslint-config-defaults": "^9.0.0",
+    "globals": "^16.4.0",
     "typescript": "~5.9.3"
   }
 }

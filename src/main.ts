@@ -65,4 +65,5 @@ const WindowWrapper = {
     },
 }
 
+// noinspection JSUnusedGlobalSymbols
 export default WindowWrapper
