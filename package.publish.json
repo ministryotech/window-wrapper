@@ -1,0 +1,26 @@
+{
+  "name": "window-wrapper",
+  "version": "5.0.1",
+  "author": "Keith Jackson",
+  "license": "MIT",
+  "private": false,
+  "type": "module",
+  "main": "./main.js",
+  "exports": {
+    ".": {
+      "import": "./main.js",
+      "require": "./cjs/main.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "keywords": [
+    "stub",
+    "window",
+    "global",
+    "wrapper"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ministryotech/window-wrapper.git"
+  }
+}
