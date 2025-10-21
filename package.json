@@ -1,24 +1,17 @@
 {
   "name": "window-wrapper",
-  "version": "5.0.0",
+  "version": "5.0.1",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
   "type": "module",
-  "main": "main.js",
+  "main": "./main.js",
   "exports": {
-    ".": "./dist/main.js", // This works locally but breaks publish - Need a different path for dist package.json - which is nutty
+    ".": {
+      "import": "./dist/main.js",
+      "require": "./dist/cjs/main.cjs"
+    },
     "./package.json": "./package.json"
-  },
-  "keywords": [
-    "stub",
-    "window",
-    "global",
-    "wrapper"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ministryotech/window-wrapper.git"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.1",
@@ -29,6 +22,7 @@
     "eslint": "^9.38.0",
     "eslint-config-defaults": "^9.0.0",
     "globals": "^16.4.0",
+    "rollup": "^4.52.5",
     "terser": "^5.44.0",
     "typescript": "~5.9.3"
   },
@@ -37,11 +31,15 @@
     "lint": "eslint src/*.ts --fix",
     "clean": "rm -rf ./dist",
     "type-checking-watch": "tsc --watch --noemit",
-    "build": "npm run init && npm run clean && npm run lint && tsc",
-    "minify": "terser ./dist/main.js -o ./dist/main.min.js",
-    "package": "npm run build && npm run minify && cp README.md ./dist/ && cp package.json ./dist/",
+    "build-es": "tsc",
+    "build-cjs": "tsc --target es5 --module amd --moduleResolution node10 --outFile ./dist/cjs/main.cjs --verbatimModuleSyntax false",
+    "minify-es": "terser ./dist/main.js -o ./dist/main.min.js",
+    "minify-cjs": "terser ./dist/cjs/main.cjs -o ./dist/cjs/main.min.cjs",
+    "build": "npm run init && npm run clean && npm run lint && npm run build-es && npm run build-cjs && npm run minify-es && npm run minify-cjs",
+    "package": "npm run build && cp README.md ./dist/ && cp package.publish.json ./dist/package.json",
+    "pack": "npm pack dist/",
     "publish": "npm publish dist/",
-    "publish-tar": "tar -czvf window-wrapper.tar.gz dist/",
-    "release": "npm run package && npm run publish && npm run publish-tar"
+    "publish-dry-run": "npm publish dist/ --dry-run",
+    "release": "npm run package && npm run pack && npm run publish"
   }
 }
