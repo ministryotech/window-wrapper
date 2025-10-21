@@ -7,7 +7,7 @@
   "type": "module",
   "main": "main.js",
   "exports": {
-    ".": "./dist/main.js",
+    ".": "./dist/main.js", // This works locally but breaks publish - Need a different path for dist package.json - which is nutty
     "./package.json": "./package.json"
   },
   "keywords": [
