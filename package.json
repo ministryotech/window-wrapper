@@ -1,16 +1,13 @@
 {
   "name": "window-wrapper",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
   "type": "module",
-  "main": "./main.js",
+  "main": "./dist/window-wrapper.js",
   "exports": {
-    ".": {
-      "import": "./dist/main.js",
-      "require": "./dist/cjs/main.cjs"
-    },
+    ".": "./dist/window-wrapper.js",
     "./package.json": "./package.json"
   },
   "devDependencies": {
@@ -31,12 +28,9 @@
     "lint": "eslint src/*.ts --fix",
     "clean": "rm -rf ./dist",
     "type-checking-watch": "tsc --watch --noemit",
-    "build-es": "tsc",
-    "build-cjs": "tsc --target es5 --module amd --moduleResolution node10 --outFile ./dist/cjs/main.cjs --verbatimModuleSyntax false",
-    "minify-es": "terser ./dist/main.js -o ./dist/main.min.js",
-    "minify-cjs": "terser ./dist/cjs/main.cjs -o ./dist/cjs/main.min.cjs",
-    "build": "npm run init && npm run clean && npm run lint && npm run build-es && npm run build-cjs && npm run minify-es && npm run minify-cjs",
-    "package": "npm run build && cp README.md ./dist/ && cp package.publish.json ./dist/package.json",
+    "minify": "terser ./dist/window-wrapper.js -o ./dist/window-wrapper.min.js",
+    "build": "npm i && npm run clean && npm run lint && tsc && npm run minify && cp package.publish.json ./dist/package.json && npm link",
+    "package": "npm run build && cp README.md ./dist/",
     "pack": "npm pack dist/",
     "publish": "npm publish dist/",
     "publish-dry-run": "npm publish dist/ --dry-run",

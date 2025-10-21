@@ -1,16 +1,13 @@
 {
   "name": "window-wrapper",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "author": "Keith Jackson",
   "license": "MIT",
   "private": false,
   "type": "module",
-  "main": "./main.js",
+  "main": "./window-wrapper.js",
   "exports": {
-    ".": {
-      "import": "./main.js",
-      "require": "./cjs/main.cjs"
-    },
+    ".": "./window-wrapper.js",
     "./package.json": "./package.json"
   },
   "keywords": [
